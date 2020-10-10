@@ -14,4 +14,4 @@ title: Video AI
 ### Video Classification by deep learning
 <br/>
 
-<video-conatiner src="https://www.youtube.com/embed/LAV56E-mWoo"/>
+<video-container src="https://www.youtube.com/embed/LAV56E-mWoo"/>
