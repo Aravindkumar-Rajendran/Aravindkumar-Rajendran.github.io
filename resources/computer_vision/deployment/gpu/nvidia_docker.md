@@ -2,4 +2,4 @@
 title: Nvidia Docker
 ---
 
-[Nvidia Docker Container](https://github.com/NVIDIA/nvidia-docker)
+[A Primer on Nvidia-Docker — Where Containers Meet GPUs](https://thenewstack.io/primer-nvidia-docker-containers-meet-gpus)
