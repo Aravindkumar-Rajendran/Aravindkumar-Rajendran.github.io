@@ -50,7 +50,7 @@ module.exports = {
         "items": [
           {
             "text": "GitHub",
-            "link": "https://github.com/Aravindkumar-Rajendran/Aravindkumar-Rajendran.github.io/wiki",
+            "link": "https://github.com/Aravindkumar-Rajendran/The-Realm-of-AI/wiki",
             "icon": "reco-github"
           }
         ]
