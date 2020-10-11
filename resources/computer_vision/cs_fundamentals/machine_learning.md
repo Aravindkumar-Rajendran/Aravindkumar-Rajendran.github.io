@@ -23,5 +23,10 @@ title: Machine learning
 <video-container src="https://youtube.com/embed/nKW8Ndu7Mjw" />
 
 <br /><br />
+
 ### To learn more about machine learning in details, we recommend you to take up the [Machine learning course](https://www.coursera.org/learn/machine-learning) by Andrew NG
+
+<br/><br/>
+
+### If you want to learn hands-on, we also recommend to take this [Google's Machine learning crash course](https://developers.google.com/machine-learning/crash-course)
 
