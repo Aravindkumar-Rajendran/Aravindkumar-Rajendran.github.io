@@ -14,7 +14,8 @@ Let's see more about that.
 
 ## **What?**
 
-what is Artificial Intelligence?
+What is Artificial Intelligence?
+
 <br><br>
 
 We have seen in many science fiction movies and in comics. AI is not what we can see only in science fiction movies like Terminator, Chappie, iRobot and etc. Those are mere dramatization if you consider the current state of AI. When you think of AI, do not connect that with robots. As a matter of fact, robot is nothing more than a shell to power the technology. That means, AI can be made without a physical body like limbs and actuators. It is much like a software program which lives and runs in silicon. 
