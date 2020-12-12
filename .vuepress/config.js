@@ -45,9 +45,13 @@ module.exports = {
         ]
       },
       {
-        "text": "Contact",
+        "text": "Join the community",
         "icon": "reco-message",
         "items": [
+          {
+            "text": "Discord",
+            "link": "https://discord.gg/hWFdVKbc7y"
+          },
           {
             "text": "GitHub",
             "link": "https://github.com/Aravindkumar-Rajendran/The-Realm-of-AI/wiki",
@@ -193,5 +197,13 @@ module.exports = {
   },
   "markdown": {
     "lineNumbers": true
-    }
+  },
+  "plugins": [
+    [
+      '@vuepress/google-analytics',
+      {
+        'ga': 'G-51ZJ2YV2P0'
+      }
+    ]
+  ]
 }

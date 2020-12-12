@@ -8,6 +8,7 @@
     "docs:build": "vuepress build ."
   },
   "devDependencies": {
+    "@vuepress/plugin-google-analytics": "^1.7.1",
     "vuepress": "1.5.4",
     "vuepress-theme-reco": "1.5.7"
   },
