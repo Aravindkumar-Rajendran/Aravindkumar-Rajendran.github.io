@@ -8,12 +8,12 @@
     "docs:build": "vuepress build ."
   },
   "devDependencies": {
-    "@vuepress/plugin-google-analytics": "^1.7.1",
-    "vuepress": "1.5.4",
-    "vuepress-theme-reco": "1.5.7"
+    "@vuepress/plugin-google-analytics": "^1.8.0",
+    "vuepress": "1.8.0",
+    "vuepress-theme-reco": "1.6.1"
   },
   "dependencies": {
-    "vue-class-component": "^7.2.3"
+    "vue-class-component": "^7.2.6"
   },
   "description": "Adaptive and Interactive website for learning Applied Artificial Intelligence"
 }

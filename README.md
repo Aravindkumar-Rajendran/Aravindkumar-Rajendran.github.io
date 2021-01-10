@@ -1,7 +1,7 @@
 ---
 home: true
 heroText: The Realm of AI
-tagline: Adaptive and Interactive site for learning Applied Artificial Intelligence
+tagline: A blog to reflect my thoughts in the field of Artificial Intelligence and Robotics
 bgImageStyle: {
   height: '58em'
 }
