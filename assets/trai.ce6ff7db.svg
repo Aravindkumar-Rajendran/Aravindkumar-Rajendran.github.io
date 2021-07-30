@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1920"
+   height="1080"
+   viewBox="0 0 508 285.75"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="/home/aravind/Downloads/Trai-banner.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.1 (ce6663b3b7, 2021-05-25)"
+   sodipodi:docname="trai.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.32"
+     inkscape:cx="723.4375"
+     inkscape:cy="329.6875"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="673.92769"
+       y="744.74392"
+       width="1922.514"
+       height="67.564011"
+       id="rect7105" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient26920">
+      <stop
+         style="stop-color:#ff1501;stop-opacity:1"
+         offset="0"
+         id="stop26916" />
+      <stop
+         style="stop-color:#fff901;stop-opacity:1"
+         offset="1"
+         id="stop26918" />
+    </linearGradient>
+    <rect
+       x="478.87585"
+       y="414.70547"
+       width="1946.0796"
+       height="157.8857"
+       id="rect6834" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient26920"
+       id="linearGradient38742"
+       gradientUnits="userSpaceOnUse"
+       x1="398.82184"
+       y1="-68.782684"
+       x2="2042.2854"
+       y2="649.6626" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-129.67504,9.5775067)"
+       id="text6832"
+       style="font-size:136px;line-height:1.25;font-family:'Noto Sans Khmer';-inkscape-font-specification:'Noto Sans Khmer';text-align:center;white-space:pre;shape-inside:url(#rect6834);fill:none;fill-opacity:1;stroke:url(#linearGradient38742);stroke-width:7;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0"
+       x="505.23926"
+       y="0"
+       inkscape:export-filename="/home/aravind/Downloads/Trai-banner.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         x="939.87577"
+         y="541.52402"
+         id="tspan114328"><tspan
+           style="font-weight:bold;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu Bold';stroke-opacity:1"
+           id="tspan114326">The Realm of AI</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-177.86553,68.339205)"
+       id="text7103"
+       style="font-size:24px;line-height:1.25;font-family:'Noto Sans Khmer';-inkscape-font-specification:'Noto Sans Khmer';text-align:center;white-space:pre;shape-inside:url(#rect7105);mix-blend-mode:darken;fill:#000000;fill-opacity:0.511812"
+       x="244.19945"
+       y="0"><tspan
+         x="1558.3367"
+         y="766.46414"
+         id="tspan114334"><tspan
+           style="font-weight:500;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans Medium';fill:#ffffff;fill-opacity:0.931832"
+           id="tspan114330">Press Space </tspan><tspan
+           style="font-weight:bold;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans Bold';fill:#ffffff;fill-opacity:0.931832"
+           id="tspan114332">&gt;</tspan></tspan></text>
+  </g>
+</svg>
