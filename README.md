@@ -42,7 +42,13 @@ Write normal Markdown. A paragraph that is only italics, such as `*2026 · Benga
 The app pages use `layout: app` and `app: stanza` or `app: suvadi`. Their Markdown
 sources include semantic HTML for the hero, screenshot figures, and native FAQ
 disclosures. Edit these sources rather than generated HTML. `assets/css/apps.css`
-contains the scoped app themes; the portfolio stylesheet is unchanged.
+contains the scoped app themes on top of `assets/css/style.css`. Every other page
+uses `assets/css/theme.css` (Clash Display + Satoshi from Fontshare, floating nav).
+
+The homepage hero is set in `content/pages/index.md` front matter with
+`hero_kicker`, `hero_title`, `hero_accent` (the gradient phrase), `hero_lede`,
+`hero_cta` / `hero_cta_href`, and `hero_link` / `hero_link_href`. Any prose page
+with `hero_title` gets a hero.
 
 Optional front matter includes `lang`, `canonical`, `image`, `icon`,
 `alternate_en`, and `alternate_ta`. Canonical and social-preview URLs are resolved

@@ -5,7 +5,8 @@ Edit the markdown, then run:
 
     python3 scripts/render.py
 
-The generated HTML keeps the current theme: same stylesheet, nav, and byline.
+Portfolio pages use assets/css/theme.css (floating nav, optional homepage hero).
+App landing pages (layout: app) keep assets/css/style.css + apps.css.
 Blog posts in content/posts/ stay markdown and are still opened from posts.html.
 """
 
@@ -93,7 +94,7 @@ def indent(text: str, spaces: int) -> str:
     return "\n".join(pad + line if line else "" for line in text.strip().split("\n"))
 
 
-def nav(current: str) -> str:
+def nav(current: str, pad: int = 6) -> str:
     lines = []
     for key, href, external in NAV:
         attrs = f' href="{href}"'
@@ -101,8 +102,98 @@ def nav(current: str) -> str:
             attrs += ' aria-current="page"'
         if external:
             attrs += ' target="_blank" rel="noopener"'
-        lines.append(f"      <a{attrs}>{key}</a>")
+        lines.append(f"{' ' * pad}<a{attrs}>{key}</a>")
     return "\n".join(lines)
+
+
+def theme_nav(current: str) -> str:
+    return f"""  <nav class="topnav" aria-label="Primary">
+    <div class="topnav-inner">
+      <a class="brand" href="./" aria-label="home"><img class="brand-logo" src="assets/img/logo.png" alt="" width="32" height="32"></a>
+      <div class="links">
+{nav(current, 8)}
+        <a class="btn-primary nav-cta" href="contact.html">get in touch</a>
+      </div>
+    </div>
+  </nav>"""
+
+
+ARROW = (
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+    'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+    '<path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+)
+
+
+def hero(meta: dict[str, str]) -> str:
+    """Optional homepage hero, driven by hero_* front matter keys."""
+    if "hero_title" not in meta:
+        return ""
+    esc = html.escape
+    title = esc(meta["hero_title"])
+    if accent := meta.get("hero_accent"):
+        title += f'<br> <span class="blue-text">{esc(accent)}</span>'
+    parts = []
+    if kicker := meta.get("hero_kicker"):
+        parts.append(f'<p class="hero-kicker"><span class="hero-kicker-dot"></span>{esc(kicker)}</p>')
+    parts.append(f'<h1 class="display-1">{title}</h1>')
+    if lede := meta.get("hero_lede"):
+        parts.append(f'<p class="lede">{esc(lede)}</p>')
+    actions = []
+    if cta := meta.get("hero_cta"):
+        href = esc(meta.get("hero_cta_href", "#"), quote=True)
+        actions.append(f'<a class="btn-primary" href="{href}">{esc(cta)} {ARROW}</a>')
+    if link := meta.get("hero_link"):
+        href = esc(meta.get("hero_link_href", "#"), quote=True)
+        actions.append(f'<a class="btn-ghost" href="{href}"><span class="ring">{ARROW}</span>{esc(link)}</a>')
+    if actions:
+        parts.append('<div class="hero-actions">\n' + indent("\n".join(actions), 2) + "\n</div>")
+    content = indent("\n".join(parts), 8)
+    return f"""  <section class="hero">
+    <div class="hero-frame">
+      <div class="hero-veil"></div>
+      <div class="hero-grain"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+{content}
+      </div>
+    </div>
+  </section>
+
+"""
+
+
+def theme_shell(source: str, meta: dict[str, str], wrap_inner: str, scripts: str = "") -> str:
+    script_block = f"\n{scripts}\n" if scripts else "\n"
+    hero_html = hero(meta)
+    body_attrs = ' class="has-hero"' if hero_html else ""
+    return f"""<!DOCTYPE html>
+<html lang="{html.escape(meta.get("lang", "en"), quote=True)}">
+<!-- Generated from {source}. Edit that file, then run: python3 scripts/render.py -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{html.escape(meta["title"])}</title>
+{meta_tags(meta)}  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@300,400,500&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="apple-touch-icon" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/css/theme.css">
+</head>
+
+<body{body_attrs}>
+{theme_nav(meta.get("nav", ""))}
+
+{hero_html}  <div class="wrap">
+{wrap_inner}
+  </div>
+
+  <footer class="byline">aravind kumar r</footer>{script_block}</body>
+
+</html>
+"""
 
 
 def meta_tags(meta: dict[str, str]) -> str:
@@ -222,14 +313,14 @@ def render_page(path: Path) -> str:
             '  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>\n'
             '  <script src="assets/js/notes.js"></script>'
         )
-        return page_shell(source, meta, inner, scripts)
+        return theme_shell(source, meta, inner, scripts)
 
     if layout == "note":
         inner = f"    <article class=\"note\">\n{indent(rendered, 6)}\n    </article>"
-        return page_shell(source, meta, inner)
+        return theme_shell(source, meta, inner)
 
     if layout == "prose":
-        return page_shell(source, meta, indent(rendered, 4))
+        return theme_shell(source, meta, indent(rendered, 4))
 
     if layout == "app":
         if meta.get("app") not in {"stanza", "suvadi"}:

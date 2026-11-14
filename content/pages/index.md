@@ -4,6 +4,12 @@ description: Aravind Kumar R - senior machine learning engineer. Agents, small l
 author: Aravind Kumar R
 layout: prose
 nav: home
+hero_title: Aravind Kumar R
+hero_lede: Senior machine learning engineer at KnowBe4.
+hero_cta: Read the posts
+hero_cta_href: posts.html
+hero_link: Resume
+hero_link_href: resume.html
 ---
 hi
 
