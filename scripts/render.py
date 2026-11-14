@@ -94,10 +94,12 @@ def indent(text: str, spaces: int) -> str:
     return "\n".join(pad + line if line else "" for line in text.strip().split("\n"))
 
 
-def nav(current: str, pad: int = 6) -> str:
+def nav(current: str, pad: int = 6, cta: str = "") -> str:
     lines = []
     for key, href, external in NAV:
         attrs = f' href="{href}"'
+        if key == cta:
+            attrs = ' class="btn-primary nav-cta"' + attrs
         if key == current:
             attrs += ' aria-current="page"'
         if external:
@@ -111,8 +113,7 @@ def theme_nav(current: str) -> str:
     <div class="topnav-inner">
       <a class="brand" href="./" aria-label="home"><img class="brand-logo" src="assets/img/logo.png" alt="" width="32" height="32"></a>
       <div class="links">
-{nav(current, 8)}
-        <a class="btn-primary nav-cta" href="contact.html">get in touch</a>
+{nav(current, 8, cta="contact")}
       </div>
     </div>
   </nav>"""
@@ -178,7 +179,7 @@ def theme_shell(source: str, meta: dict[str, str], wrap_inner: str, scripts: str
 {meta_tags(meta)}  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link href="https://api.fontshare.com/v2/css?f[]=clash-display@300,400,500&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/logo.png">
   <link rel="stylesheet" href="assets/css/theme.css">
 </head>

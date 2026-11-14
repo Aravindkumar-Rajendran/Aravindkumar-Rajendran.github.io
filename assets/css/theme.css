@@ -173,32 +173,41 @@ strong {
   border-radius: 999px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 520px) {
   .topnav .links a.nav-cta {
-    display: none;
+    padding: 4px 12px;
   }
 }
 
 @media (max-width: 520px) {
-  :root {
-    --nav-h: 88px;
-  }
-
   .topnav-inner {
-    flex-wrap: wrap;
-    gap: 2px 16px;
-    padding: 10px 16px;
-  }
-
-  .topnav .brand {
-    width: 100%;
+    gap: 12px;
+    padding: 0 6px 0 10px;
   }
 
   .topnav .links {
-    width: 100%;
-    gap: 18px;
+    gap: 14px;
+    min-width: 0;
     overflow-x: auto;
     scrollbar-width: none;
+  }
+
+  .topnav .links a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .topnav-inner {
+    gap: 8px;
+  }
+
+  .topnav .links {
+    gap: 10px;
+  }
+
+  .topnav .links a.nav-cta {
+    padding: 4px 10px;
   }
 }
 
